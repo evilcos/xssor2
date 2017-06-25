@@ -1,0 +1,217 @@
+{% extends "basic.html" %}
+{% block title %}{{sys_name}} - Hack with JavaScript{% endblock %}
+{% block css %}
+<style>
+.masthead h2{margin-top:10px;}
+.form-inline{margin-bottom:10px;}
+
+/*ende*/
+#ende_textarea{width:100%; height:400px; color:#333; padding:5px;}
+#ende_box code{padding:5px; margin:0;}
+.mastbody{padding-top:8px;}
+.fs{position:absolute;width:98%;margin:5px;padding:5px;top:0;left:0;z-index:999;background-color:#fcfcfc;}
+.input-sm{font-size:14px;}
+
+/*codz*/
+#codz_lbox{padding-left:0;padding-right:5px;}
+#codz_rbox{padding-left:5px;padding-right:0;}
+#ca_blank{width:730px; padding:0 0 5px 0;}
+#ca_textarea{width:100%; height:350px; color:#333; padding:5px;}
+#ca_kv{width:406px;}
+.panel{margin-bottom:10px;}
+.panel-body{padding:10px;}
+.panel-body .table{margin-bottom:0;}
+
+/*probe*/
+#probe_lbox{padding-left:0;padding-right:5px;}
+#probe_rbox{padding-left:5px;padding-right:0;}
+#probe_lbox .jumbotron{margin-bottom:0;}
+#probe_tip1 a{color:#79a736;text-decoration:underline;}
+#probe_tip2{padding:10px;margin-bottom:10px;}
+#probe_tip2 p{font-size:14px;}
+#probe_tip2 a{color:#79a736;text-decoration:underline;}
+
+/*about*/
+#about_lbox{padding-left:0;padding-right:5px;}
+#about_rbox{padding-left:5px;padding-right:0;}
+#about_lbox pre{padding:0;background-color:transparent;border:0;font-family:"Courier New", Monospace;}
+
+</style>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="/s/payload/jsbeautify/beautify.js"></script>
+<script type="text/javascript" src="/s/payload/jsbeautify/beautify-html.js"></script>
+<script type="text/javascript" src="/s/payload/jsbeautify/unpackers/javascriptobfuscator_unpacker.js"></script>
+<script type="text/javascript" src="/s/payload/jsbeautify/unpackers/urlencode_unpacker.js"></script>
+<script type="text/javascript" src="/s/payload/jsbeautify/unpackers/p_a_c_k_e_r_unpacker.js"></script>
+<script type="text/javascript" src="/s/payload/jsbeautify/unpackers/myobfuscate_unpacker.js"></script>
+<script type="text/javascript" src="/s/payload/jsbeautify/my-js-beautify.js"></script>
+<script type="text/javascript" src="/s/payload/packer/my.js"></script>
+<script type="text/javascript" src="/s/payload/packer/base2-load.js"></script>
+<script type="text/javascript" src="/s/payload/packer/Packer.js"></script>
+<script type="text/javascript" src="/s/payload/packer/Words.js"></script>
+<script type="text/javascript" src="/s/payload/packer/bindings.js"></script>
+<script type="text/javascript" src="/s/payload/lib/crypto/crypto/crypto.js"></script>
+<script type="text/javascript" src="/s/payload/lib/crypto/md5/md5-min.js"></script>
+<script type="text/javascript" src="/s/payload/lib/crypto/sha1/sha1-min.js"></script>
+<script type="text/javascript" src="/s/payload/lib/crypto/sha256/sha256-min.js"></script>
+<script type="text/javascript" src="/s/payload/lib/ende.js"></script>
+<script type="text/javascript" src="/s/payload/lib/codzauto.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="masthead">
+<h2 class="muted"><span class="text-danger glyphicon glyphicon-console" aria-hidden="true"></span> XSS<span class="text-danger">'</span>OR</h2>
+<ul class="nav nav-tabs" id="navtab">
+  <li class="active"><a href="#ende" data-toggle="tab" aria-expanded="true">Encode/Decode</a></li>
+  <li class=""><a href="#codz" data-toggle="tab" aria-expanded="false">Codz</a></li>
+  <li class=""><a href="#probe" data-toggle="tab" aria-expanded="false">Probe</a></li>
+  <li class=""><a href="#about" data-toggle="tab" aria-expanded="false">About</a></li>
+</ul>
+</div>
+<div class="mastbody">
+<div class="tab-content">
+  <div class="tab-pane fade active in" id="ende">
+     {% include "ende.html" %}
+  </div>
+  <div class="tab-pane fade raw" id="codz">
+    <div class="col-lg-7" id="codz_lbox">
+      {% include "codzl.html" %}
+    </div>
+    <div class="col-lg-5" id="codz_rbox">
+      {% include "codzr.html" %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="probe">
+    {% include "probe.html" %}
+  </div>
+  <div class="tab-pane fade" id="about">
+    {% include "about.html" %}
+  </div>
+</div>
+</div>
+<script>
+function refresh(path){
+    if(path && typeof(path) == 'string'){alert("/"+path);location.href = "/" + path;}else{
+        location.reload();
+    }
+}
+
+$(document).ready(function(){
+    $('#probe_tip1_btn').click(function() {
+        var pid = $('#probe_tip1_text').val();
+        var token = $("[name='csrfmiddlewaretoken']").attr('value');
+        if(pid != '{{pid}}'){
+            alert("Probe string must be: {{pid}}");
+        }
+        else{
+            $.ajax({
+                method:"post",
+                url:"/probe/create",
+                data: {
+                    'pid' : pid,
+                    'csrfmiddlewaretoken': token,
+                },
+                success: function(data, s){
+                    if(data.succ == '1'){
+                        alert(data.msg);
+                        setTimeout('refresh("")', 1000);
+                    }else{
+                        alert(data.msg);
+                    }
+                },
+                error: function(){
+                    alert('Probe created failed.');
+                }
+            });
+        }
+        return false;
+    });
+    $('#probe_cmd_rst').click(function() {
+        $('#probe_cmd_text').val('alert("xssor");');
+        return false;
+    });
+    $('#probe_cmd_btn').click(function() {
+        var cmd = $('#probe_cmd_text').val();
+        if(!cmd){alert('CMD(JavaScript Codz) can not be null.');return false;}
+        var token = $("[name='csrfmiddlewaretoken']").attr('value');
+        $.ajax({
+            method:"post",
+            url:"/cmd/create",
+            data: {
+                'pid': '{{pid}}',
+                'cmd': cmd,
+                'csrfmiddlewaretoken': token,
+            },
+            success: function(data, s){
+                if(data.succ == '1'){
+                    alert(data.msg);
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error: function(){
+                alert('CMD created failed.');
+            }
+        });
+        return false;
+    });
+
+    function probe_status(){
+        var token = $("[name='csrfmiddlewaretoken']").attr('value');
+        $.ajax({
+            type:"post",
+            url:"/probe/status",
+            data:{
+                'pid': '{{pid}}',
+                'csrfmiddlewaretoken': token,
+            },
+            success: function(data,s){
+                if(data.succ == '1'){
+                    if(data.probe_live){
+                        $('#probe_status1').html('<span class="label label-success">ONLINE</span>');
+                    }else{
+                        $('#probe_status1').html('<span class="label label-default">OFFLINE</span>');
+                    }
+                    if(data.probe_done){
+                        $('#probe_status2').html('<a href="/probe/{{pid}}.txt" target="_blank">{{pid}}.txt</a> <span class="label label-success">PROBED DONE</span>');
+                    }else{
+                        $('#probe_status2').html('<span class="label label-warning">WAITING FOR PROBED</span>');
+                    }
+                }else{
+                }
+            },
+            error: function(){
+                $('#probe_status1').html('<span class="label label-danger">ERROR</span>');
+                $('#probe_status2').html('<span class="label label-danger">ERROR</span>');
+            }
+        });
+    }
+    setInterval(function () {
+        probe_status();
+    }, 5000);
+
+    $('#navtab a').each(function(){
+        $(this).click(function(){
+            location.hash = this.href.split('#')[1];
+        });
+        if(this.href.split('#')[1] == location.hash.split('#')[1]){$(this).click();}
+    });
+    
+    // probe textarea auto save, the minimal code?:)
+    function probe_save(){
+        if (window.localStorage) {
+            localStorage.setItem('probe_local_db', $('#probe_cmd_text').val());
+        }
+    }
+    if (window.localStorage) {
+        var v = localStorage.getItem('probe_local_db');
+        if(v) $('#probe_cmd_text').val(v);
+    }
+    $('#probe_cmd_text').on('input', function(){probe_save();});
+
+});
+</script>
+{% endblock %}
+

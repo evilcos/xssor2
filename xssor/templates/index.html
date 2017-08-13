@@ -98,6 +98,11 @@ function refresh(path){
     }
 }
 
+document.cookie = "ps=0";
+{% if probe_existed %}
+document.cookie = "ps=1";
+{% endif %}
+
 $(document).ready(function(){
     $('#probe_tip1_btn').click(function() {
         var pid = $('#probe_tip1_text').val();
@@ -115,6 +120,7 @@ $(document).ready(function(){
                 },
                 success: function(data, s){
                     if(data.succ == '1'){
+                        document.cookie = "ps=1";
                         alert(data.msg);
                         setTimeout('refresh("")', 1000);
                     }else{
@@ -188,8 +194,22 @@ $(document).ready(function(){
             }
         });
     }
+
+    function get_cookie(n) {
+        var _arr = document.cookie.split("; ");
+        for(var i = 0; i < _arr.length; i++){
+            var arr = _arr[i].split("=");
+            if(n == arr[0]){
+                return arr[1];
+            }
+        }
+        return "";
+    }
+
     setInterval(function () {
-        probe_status();
+        if(get_cookie('ps') == '1'){
+            probe_status();
+        }
     }, 5000);
 
     $('#navtab a').each(function(){

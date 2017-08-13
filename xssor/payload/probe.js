@@ -1,6 +1,6 @@
 /*xssor.io*/
 xssor = {};
-xssor.cmd_url = '//xssor.io/cmd'; // replace xssor.io to your domain or ip address
+xssor.cmd_url = 'http://xssor.io/cmd';
 xssor.gone = 0;
 xssor.done = 0;
 

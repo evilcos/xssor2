@@ -15,7 +15,7 @@
 /*codz*/
 #codz_lbox{padding-left:0;padding-right:5px;}
 #codz_rbox{padding-left:5px;padding-right:0;}
-#ca_blank{width:730px; padding:0 0 5px 0;}
+#ca_blank{padding:0 0 5px 0;}
 #ca_textarea{width:100%; height:350px; color:#333; padding:5px;}
 #ca_kv{width:406px;}
 .panel{margin-bottom:10px;}
@@ -37,7 +37,7 @@
 #about_lbox pre{padding:0;background-color:transparent;border:0;font-family:"Courier New", Monospace;}
 
 /*mobile*/
-@media (max-width: 575px) { 
+@media (max-width: 900px) { 
     .nav-tabs>li>a{padding:6px;}
     .panel-heading{padding:3px;line-height: 6px;}
     input[type="radio"], input[type="checkbox"]{display: inline;}
@@ -48,7 +48,8 @@
     .form-control{padding:0 0 0 3px;}
     #ca_blank .line{display: block;} 
     #ca_blank select.input-sm{display: inline-block; width:135px; padding:2px;}
-    #ca_blank input.input-sm{display: inline-block; width:220px;padding:2px;}
+    #ca_blank input.input-sm{display: inline-block; width:90%;padding:2px;}
+    .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{padding:2px;}
 }
 </style>
 {% endblock %}

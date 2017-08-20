@@ -35,6 +35,10 @@ Have a look at ![screenshots](https://github.com/evilcos/xssor2/tree/master/scre
 ## CHANGELOG
 
 ```
+UPDATE: 2017/08/20
+
+*. Increase support for mobile more friendly.
+
 UPDATE: 2017/08/13
 
 *. Fix Probe bug to file:// protocol.

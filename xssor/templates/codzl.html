@@ -1,34 +1,38 @@
-      <div class="panel panel-default">
-      <div class="panel-heading">CREATOR CODZ</div>
-      <div class="panel-body">
-<div id="ca_blank" class="form-inline">
-    <select id="ca_method" name="ca_methoda" class="form-control input-sm">
-        <option value="POST">POST</option>
-        <option value="GET">GET</option>
-     </select>
-    <input type="text" id="ca_action" class="form-control input-sm" name="ca_action" value="http://foo/submit.php" />
-    <input type="text" id="ca_kv" name="ca_kv" class="form-control input-sm" value="key1=value1&key2=value2" />
-    <p style="padding:5px 0 0 0;margin:0;">
-    <select id="csrflang" class="form-control input-sm">
-    <option value="">CSRF Language</option>
-    <option value="js">JavaScript</option>
-    <option value="as">Flash AS3</option>
-    <option value="asp">ASP</option>
-    <option value="php">PHP</option>
-    <!--option value="py">Python</option-->
-    </select>
-    <code><input type="button" id="button_csrf" class="btn btn-xs" value="CREATE YOUR CSRF" disabled="true" /></code>
-    |
-    <select id="ajax_form_type" class="form-control input-sm">
-        <option value="">Content-Type</option>
-        <option value="1">multipart/form-data</option>
-        <option value="2">application/x-www-form-urlencoded</option>
-    </select>
-    <!--input class="button" type="checkbox" name="use_jquery" id="use_jquery" /><label for="use_jquery"> JQuery</label>
-    <br /-->
-    <code><input type="button" id="button_ajax" class="btn btn-xs" value="CREATE YOUR AJAX" disabled="true" /></code>
-    </p>
+<div class="panel panel-default">
+    <div class="panel-heading">CREATOR CODZ</div>
+    <div class="panel-body">
+        <div id="ca_blank" class="form-inline">
+            <select id="ca_method" name="ca_methoda" class="form-control input-sm">
+                <option value="POST">POST</option>
+                <option value="GET">GET</option>
+            </select>
+            <span class="line"><input type="text" id="ca_action" class="form-control input-sm" name="ca_action" value="http://foo/submit.php" /></span>
+            <span class="line"><input type="text" id="ca_kv" name="ca_kv" class="form-control input-sm" value="key1=value1&key2=value2" /></span>
+            <p style="padding:5px 0 0 0;margin:0;">
+                <span class="line">
+                <select id="csrflang" class="form-control input-sm">
+                <option value="">CSRF Language</option>
+                <option value="js">JavaScript</option>
+                <option value="as">Flash AS3</option>
+                <option value="asp">ASP</option>
+                <option value="php">PHP</option>
+                <!--option value="py">Python</option-->
+                </select>
+                <code><input type="button" id="button_csrf" class="btn btn-xs" value="CREATE YOUR CSRF" disabled="true" /></code>
+                </span>
+
+                <span class="line">
+                <select id="ajax_form_type" class="form-control input-sm">
+                    <option value="">Content-Type</option>
+                    <option value="1">multipart/form-data</option>
+                    <option value="2">application/x-www-form-urlencoded</option>
+                </select>
+                <!--input class="button" type="checkbox" name="use_jquery" id="use_jquery" /><label for="use_jquery"> JQuery</label>
+                <br /-->
+                <code><input type="button" id="button_ajax" class="btn btn-xs" value="CREATE YOUR AJAX" disabled="true" /></code>
+            </span>
+            </p>
+        </div>
+        <textarea id="ca_textarea" class="form-control"></textarea>
+    </div>
 </div>
-<textarea id="ca_textarea"></textarea>
-      </div>
-      </div>

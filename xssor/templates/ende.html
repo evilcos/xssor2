@@ -1,36 +1,79 @@
 <div id="ende_box" class="form-inline">
     <p>
-    <code><input class="btn btn-xs" type="button" value="→16en" onclick="xssorende.encode.en(16)" /> <input class="btn btn-xs" type="button" value="De" onclick="xssorende.encode.de(16)" /> <input class="radio inline" type="radio" name="hex" checked="checked" />\u<input class="radio inline" type="radio" name="hex" id="hex_x" />&amp;#x;</code>
-    <code><input class="btn btn-xs" type="button" value="→10en" onclick="xssorende.encode.en(10)" /> <input class="btn btn-xs" type="button" value="De" onclick="xssorende.encode.de(10)" /> <input class="radio inline" type="radio" name="dec" id="dec_0" checked="checked" />,<input class="radio inline" type="radio" name="dec" id="dec_1" />c<input class="radio inline" type="radio" name="dec" id="dec_2" />&amp;#<input class="radio inline" type="radio" name="dec" id="dec_3" />&amp;#;</code>
-    <code><input class="btn btn-xs" type="button" value="packer" id="pack-script" /> <span class="arrow">&harr;</span> <input class="btn btn-xs" type="button" value="unpacker" id="decode-script" /></code>
-    
-    <code><input class="btn btn-xs" type="button" id="jsbeautify" value="js beautify" style="color:#F11F34;font-weight:bold;" />
-    <input class="btn btn-xs" type="button" value="eval codz" onclick="try{eval(_g('ende_textarea').value)}catch(e){alert('eval error- -! '+e);}" style="color:#F11F34;font-weight:bold;" />
-    <input class="btn btn-xs" type="button" value="clear codz" onclick="_g('ende_textarea').value='';" /></code>
-    </p><p>
-    <code><input class="btn btn-xs" type="button" value="escape" onclick="xssorende.encode._escape()" /> <span class="arrow">&harr;</span> <input class="btn btn-xs" type="button" value="unescape" onclick="xssorende.encode._unescape()" /></code>
-    <code><input class="btn btn-xs" type="button" value="encodeURI" onclick="xssorende.encode._encodeURI()" /> <span class="arrow">&harr;</span> <input class="btn btn-xs" type="button" value="decodeURI" onclick="xssorende.encode._decodeURI()" /></code>
-    <code><input class="btn btn-xs" type="button" value="encodeURIC" title="encodeURIComponent" onclick="xssorende.encode._encodeURIComponent()" /> <span class="arrow">&harr;</span> <input class="btn btn-xs" type="button" value="decodeURIC" title="decodeURIComponent" onclick="xssorende.encode._decodeURIComponent()" /></code>
-    <code><input class="btn btn-xs" type="button" value="HtmlEncode" onclick="xssorende.encode.htmlencode(1)" /> <span class="arrow">&harr;</span> <input class="btn btn-xs" type="button" value="HtmlDecode" onclick="xssorende.encode.htmlencode(2)" /></code>
-    <code><input class="btn btn-xs" type="button" value="Html2JS" onclick="xssorende.encode.html2js(1)" /> <span class="arrow">&harr;</span> <input class="btn btn-xs" type="button" value="JS2Html" onclick="xssorende.encode.html2js(2)" /></code>
-    </p><p>
-    <code><input class="btn btn-xs" type="button" value="base64En" onclick="xssorende.encode.base64Code(1)" /> <span class="arrow">&harr;</span> <input class="btn btn-xs" type="button" value="base64De" onclick="xssorende.encode.base64Code(2)" /></code>
-    
+        <code>
+            <input class="btn btn-xs" type="button" value="→16en" onclick="xssorende.encode.en(16)" /> 
+            <input class="btn btn-xs" type="button" value="De" onclick="xssorende.encode.de(16)" /> 
+            <input class="radio inline" type="radio" name="hex" checked="checked" />\u
+            <input class="radio inline" type="radio" name="hex" id="hex_x" />&amp;#x;
+        </code>
+        <code>
+            <input class="btn btn-xs" type="button" value="→10en" onclick="xssorende.encode.en(10)" /> 
+            <input class="btn btn-xs" type="button" value="De" onclick="xssorende.encode.de(10)" /> 
+            <input class="radio inline" type="radio" name="dec" id="dec_0" checked="checked" />,
+            <input class="radio inline" type="radio" name="dec" id="dec_1" />c
+            <input class="radio inline" type="radio" name="dec" id="dec_2" />&amp;#
+            <input class="radio inline" type="radio" name="dec" id="dec_3" />&amp;#;
+        </code>
+        <code>
+            <input class="btn btn-xs" type="button" value="packer" id="pack-script" /> 
+            <span class="arrow">&harr;</span> 
+            <input class="btn btn-xs" type="button" value="unpacker" id="decode-script" />
+        </code>
 
-    <code><select id="charset" class="form-control input-sm">
-        <option value="utf-7">UTF-7</option>
-    </select>
-    <input class="btn btn-xs" type="button" value="en" onclick="xssorende.encode.utf7_encode()" /> / <input class="btn btn-xs" type="button" value="de" onclick="xssorende.encode.utf7_decode()" /></code>
-
-    <code><select id="hash" class="form-control input-sm">
-        <option value="md5">MD5</option>
-        <option value="sha1">SHA1</option>
-        <option value="sha256">SHA256</option>
-    </select>
-    <input class="btn btn-xs" type="button" value="en" id="btn_hash" /></code>
-    
-    <code><input class="form-control input-sm" type="text" id="oldC" size="5" /> <span class="arrow">&rarr;</span> <input class="form-control input-sm" type="text" id="newC" size="5" /> <input class="btn btn-xs" type="button" value="replace" onclick="xssorende.encode.replaceC()" /></code>
+        <code>
+            <input class="btn btn-xs" type="button" id="jsbeautify" value="js beautify" style="color:#F11F34;font-weight:bold;" />
+            <input class="btn btn-xs" type="button" value="eval codz" onclick="try{eval(_g('ende_textarea').value)}catch(e){alert('eval error- -! '+e);}" style="color:#F11F34;font-weight:bold;" />
+            <input class="btn btn-xs" type="button" value="clear codz" onclick="_g('ende_textarea').value='';" />
+        </code>
     </p>
-    <textarea id="ende_textarea">x=alert;x(/xssor/.source);</textarea>
-</div>
+    <p>
+        <code>
+            <input class="btn btn-xs" type="button" value="escape" onclick="xssorende.encode._escape()" /> 
+            <span class="arrow">&harr;</span> 
+            <input class="btn btn-xs" type="button" value="unescape" onclick="xssorende.encode._unescape()" />
+            <input class="btn btn-xs" type="button" value="encodeURI" onclick="xssorende.encode._encodeURI()" /> 
+            <span class="arrow">&harr;</span> 
+            <input class="btn btn-xs" type="button" value="decodeURI" onclick="xssorende.encode._decodeURI()" />
+            
+            <input class="btn btn-xs" type="button" value="encodeURIC" title="encodeURIComponent" onclick="xssorende.encode._encodeURIComponent()" /> 
+            <span class="arrow">&harr;</span> 
+            <input class="btn btn-xs" type="button" value="decodeURIC" title="decodeURIComponent" onclick="xssorende.encode._decodeURIComponent()" />
+            
+            <input class="btn btn-xs" type="button" value="Html2JS" onclick="xssorende.encode.html2js(1)" /> 
+            <span class="arrow">&harr;</span> 
+            <input class="btn btn-xs" type="button" value="JS2Html" onclick="xssorende.encode.html2js(2)" />
+        
+            <input class="btn btn-xs" type="button" value="HtmlEncode" onclick="xssorende.encode.htmlencode(1)" /> 
+            <span class="arrow">&harr;</span> 
+            <input class="btn btn-xs" type="button" value="HtmlDecode" onclick="xssorende.encode.htmlencode(2)" />
+        </code>
+    </p>
+    <p>
+        <code>
+            <input class="btn btn-xs" type="button" value="base64En" onclick="xssorende.encode.base64Code(1)" /> 
+            <span class="arrow">&harr;</span> <input class="btn btn-xs" type="button" value="base64De" onclick="xssorende.encode.base64Code(2)" />
+        </code>
+        
+        <code>
+            <select id="hash" class="form-control input-sm">
+                <option value="md5">MD5</option>
+                <option value="sha1">SHA1</option>
+                <option value="sha256">SHA256</option>
+            </select>
+            <input class="btn btn-xs" type="button" value="en" id="btn_hash" /> 
 
+            <select id="charset" class="form-control input-sm">
+                <option value="utf-7">UTF-7</option>
+            </select>
+            <input class="btn btn-xs" type="button" value="en" onclick="xssorende.encode.utf7_encode()" /> / 
+            <input class="btn btn-xs" type="button" value="de" onclick="xssorende.encode.utf7_decode()" />
+        </code>
+
+        <code>
+            <input class="form-control input-sm" type="text" id="oldC" size="5" /> 
+            <span class="arrow">&rarr;</span> <input class="form-control input-sm" type="text" id="newC" size="5" /> 
+            <input class="btn btn-xs" type="button" value="replace" onclick="xssorende.encode.replaceC()" />
+        </code>
+    </p>
+    <textarea id="ende_textarea" class="form-control">x=alert;x(/xssor/.source);</textarea>
+</div>

@@ -35,6 +35,11 @@ Have a look at ![screenshots](https://github.com/evilcos/xssor2/tree/master/scre
 ## CHANGELOG
 
 ```
+UPDATE: 2017/09/23
+
+*. Upgrade JS BEAURIFY.
+*. Fix PACKER/UNPACKER error bug.
+
 UPDATE: 2017/08/20
 
 *. Increase support for mobile more friendly.

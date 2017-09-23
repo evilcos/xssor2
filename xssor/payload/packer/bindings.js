@@ -10,7 +10,7 @@ new base2.JSB.RuleList({
 		},
 		
 		ready: function() {
-			message.write("ready");
+			//message.write("ready");
 			ende_textarea.focus();
 		}
 	},
@@ -48,10 +48,10 @@ new base2.JSB.RuleList({
 					var value = packer.pack(ende_textarea.value, true, true);
 					ende_textarea.value = value;
 					var stop = new Date;
-					message.update("耗时: " + (stop - start) + " milliseconds",input_length);
+					//message.update("耗时: " + (stop - start) + " milliseconds",input_length);
 				}
 			} catch (error) {
-				message.error("error packing script", error);
+				//message.error("error packing script", error);
 			} finally {
 				//saveScript.disabled = !ende_textarea.value;
 				//decodeScript.disabled = !ende_textarea.value || !base62.checked;
@@ -80,10 +80,10 @@ new base2.JSB.RuleList({
 					eval("var value=String" + ende_textarea.value.slice(4));
 					var stop = new Date;
 					ende_textarea.value = value;
-					message.update("耗时: " + (stop - start) + " milliseconds");
+					//message.update("耗时: " + (stop - start) + " milliseconds");
 				}
 			} catch (error) {
-				message.error("error decoding script", error);
+				//message.error("error decoding script", error);
 			} finally {
 				//decodeScript.blur();
 				//decodeScript.disabled = true;

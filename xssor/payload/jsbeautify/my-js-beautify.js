@@ -92,7 +92,7 @@ function beautify()
 
     if (source && source[0] === '<' && source.substring(0, 4) !== comment_mark) {
         $('#ende_textarea').val(
-            style_html(source, opts)
+            html_beautify(source, opts)
         );
     } else {
         var v = js_beautify(unpacker_filter(source), opts);

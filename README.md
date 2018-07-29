@@ -15,7 +15,7 @@ Python 2.7.*
 * cd xssor2
 * modify xssor/payload/probe.js
 ```javascript
-xssor.cmd_url = 'http://xssor.io/cmd'; // replace xssor.io to your domain or ip address
+xssor.cmd_url = location.protocol + '//xssor.io/cmd'; // replace xssor.io to your domain or ip address
 ```
 * pip install -r requirement.txt
 * python manage.py runserver 0.0.0.0:8000
@@ -35,6 +35,10 @@ Have a look at ![screenshots](https://github.com/evilcos/xssor2/tree/master/scre
 ## CHANGELOG
 
 ```
+UPDATE: 2018/07/29
+
+*. Compatible with HTTP and HTTPS
+
 UPDATE: 2017/09/23
 
 *. Upgrade JS BEAURIFY.

@@ -30,7 +30,7 @@ Try it by yourself.
 
 ## SCREENSHOTS
 
-Have a look at ![screenshots](https://github.com/evilcos/xssor2/tree/master/screenshots)
+Have a look at [screenshots](https://github.com/evilcos/xssor2/tree/master/screenshots)
 
 ## CHANGELOG
 

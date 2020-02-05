@@ -3,13 +3,14 @@ XSS'OR - Hack with JavaScript.
 
 ## ONLINE
 You can have a try:
-http://xssor.io/
+
+https://xssor.io and http://xssor.io/
 
 It contains three major modules: Encode/Decode, Codz, Probe.
 
 ## INSTALL
 
-Python 2.7.*
+Python 3 with Django 3.0.* or Python 2 with Django 1.11.*
 
 * git clone https://github.com/evilcos/xssor2 or download directly
 * cd xssor2
@@ -17,8 +18,8 @@ Python 2.7.*
 ```javascript
 xssor.cmd_url = location.protocol + '//xssor.io/cmd'; // replace xssor.io to your domain or ip address
 ```
-* pip install -r requirement.txt
-* python manage.py runserver 0.0.0.0:8000
+* pip3/pip install -r requirement.txt
+* python3/python manage.py runserver 0.0.0.0:8000
 
 Browser http://[yourip]:8000 to enjoy.
 
@@ -28,16 +29,18 @@ If you want to delete probe automatically, you can use crontab to this script fi
 
 Try it by yourself.
 
-## SCREENSHOTS
-
-Have a look at [screenshots](https://github.com/evilcos/xssor2/tree/master/screenshots)
-
 ## CHANGELOG
 
 ```
+UPDATE: 2020/02/05
+
+*. Compatible with Python 2 and Python 3.
+*. Compatible with Django 1.11.* and Django 3.0.*.
+*. Fix some bugs.
+
 UPDATE: 2018/07/29
 
-*. Compatible with HTTP and HTTPS
+*. Compatible with HTTP and HTTPS.
 
 UPDATE: 2017/09/23
 

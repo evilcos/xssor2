@@ -23,11 +23,16 @@ def to_time(timestr):
     except:
         return time.time()
 
+def __md5(v):
+    m = hashlib.md5()
+    m.update(v.encode('utf-8'))
+    return m.hexdigest()
+
 def __getpid(ip):
     abcdef = 'abcdefghijklmnopqrstuvwxyz'
     fedcba = 'zyawvubsrjponmlkqihgfedctx'
-    h1 = hashlib.md5('<%s>'%ip).hexdigest()
-    h2 = hashlib.md5('</%s>'%h1).hexdigest()
+    h1 = __md5('<%s>'%ip)
+    h2 = __md5('</%s>'%h1)
     h = h1 + h2
     j = 0
     adict = {}
@@ -85,7 +90,7 @@ def __status(req):
     except:
         c = ''
     if c:
-        if(time.time() - to_time(c) <= 15):
+        if(time.time() - to_time(c) <= 7):
             probe_live = 1
 
     probe_cmd_c = ''

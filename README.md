@@ -29,9 +29,29 @@ If you want to delete probe automatically, you can use crontab to this script fi
 
 Try it by yourself.
 
+## DOCKER
+
+You can build this project with docker
+
+```bash
+docker build -t xssor:latest .
+```
+
+Run the app with
+
+```bash
+docker run -d -p [port]:8000 xssor:latest [probe domain or ip]
+```
+
+
+
 ## CHANGELOG
 
 ```
+UPDATE: 2020/07/28
+
+*. Increase support for docker.
+
 UPDATE: 2020/02/05
 
 *. Compatible with Python 2 and Python 3.

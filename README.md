@@ -82,6 +82,7 @@ UPDATE: 2017/05/07
 *. Encode/Decode, enhanced.
 *. Codz, enhanced.
 *. Probe, free to try.
+*. It is helpfull in fixing bugs
 *. Complete rewriting with Python, Django, Bootstrap, jQuery, ...
 *. Independent domain: xssor.io.
 ```
